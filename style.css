@@ -1,0 +1,209 @@
+/* css reset */
+
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Karla';
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+fieldset {
+    border: none;
+}
+
+/* custom properties */
+
+:root {
+    /* Primary */
+    --Green-200-lighter: hsl(148, 38%, 91%);
+    --Green-600-medium: hsl(169, 82%, 27%);
+    --Green-800-medium: hsl(169, 82%, 17%);
+    --Red: hsl(0, 66%, 54%);
+    /* Neutral */
+    --White: hsl(0, 0%, 100%);
+    --Grey-500-medium: hsl(186, 15%, 59%);
+    --Grey-900-darker: hsl(187, 24%, 22%);
+    --custom-padding:0.8rem;
+    --custom-border-radius:4px;
+}
+
+/* main style*/
+
+body {
+    display: grid;
+    place-content: center;
+    gap: 2rem;
+    min-height: 100vh;
+    background-color: var(--Green-200-lighter);
+    margin-block: 1rem;
+    color: var(--Grey-900-darker);
+}
+
+.wraper {
+    background-color: var(--White);
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+    display: grid;
+    gap: 1.5rem;
+    /* display: none; */
+    /* overflow: hidden; */
+}
+
+.form, .form-group, .radio-group {
+    display: grid;
+    gap: 1rem;
+}
+
+.form-item {
+    display: grid;
+    gap: 0.2rem;
+}
+
+.error-msg, label, .custom-label {
+    font-size: 0.825rem;
+}
+
+.error-msg {
+    transform: scale(0);
+    color: var(--Red);
+}
+
+#email:not(:focus):invalid {
+    border: 1px solid var(--Red);
+}
+
+#email:not(:focus):invalid ~ .error-msg {
+    transform: scale(1);
+}
+
+.text-input, .submit-btn {
+    padding: var(--custom-padding);
+    border-radius: var(--custom-border-radius);
+} 
+
+.text-input:focus, .text-input-msg:focus,  .text-input:hover, .text-input-msg:hover {
+    border: 1px solid var(--Green-600-medium);
+    outline: 1px solid var(--Green-600-medium);
+}
+
+.text-input, .text-input-msg {
+    border: 1px solid var(--Grey-500-medium);
+}
+
+.form-item-bordered, .form-item-flex {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form-item-bordered {
+    border: 1px solid var(--Grey-900-darker);
+    padding: var(--custom-padding);
+    border-radius: var(--custom-border-radius);
+}
+
+.text-input-msg {
+    min-height: 8rem;
+    resize: vertical;
+    padding: var(--custom-padding);
+}
+
+.submit-btn {
+    background-color: var(--Green-600-medium);
+    color: var(--White);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in;
+}
+
+.submit-btn:hover, .submit-btn:focus {
+    background-color: var(--Green-800-medium);
+}
+
+.checkbox, .radio-item {
+    accent-color: var(--Green-600-medium);
+}
+
+.error .error-msg, .error~ .error-msg {
+    transform: scale(1);
+}
+
+.error .text-input {
+    border:  1px solid var(--Red);
+}
+
+.error .text-input:focus {
+    outline: 1px solid var(--Red);
+}
+
+.alert-msg {
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color:var(--Grey-900-darker);
+    color: var(--White);
+    display: grid;
+    gap: 1rem;
+    left: 50%;
+    transform: translateY(0) translateX(-50%);
+    top: 0;
+    opacity: 1;
+    transition: 0.3s ease-in;
+    position: fixed;
+}
+
+.hidden-msg {
+    transform: translateX(-50%) translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.success-title {
+    font-size: 1.4rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.success-title::before {
+    content: '';
+    background: url('assets/images/icon-success-check.svg') ;
+    background-size: cover;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.success-par {
+    font-weight: 300;
+}
+
+/* front end mentor style */
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (min-width:600px) {
+
+    .wraper {
+        min-width: 550px;
+    }
+
+    .form, .form-group, .radio-group {
+        gap: 1rem;
+    }
+
+    .radio-group, .name-field {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}

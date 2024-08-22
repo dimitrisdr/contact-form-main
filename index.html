@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <!-- font family -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <!-- js -->
+   <script src="main.js" defer></script>
+  <!-- custom style -->
+   <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Contact form</title>
+</head>
+<body>
+
+  <main class="wraper">
+    <h1 class="title">Contact Us</h1>
+    <form action="#" class="form" method="POST">
+      <fieldset class="form-group name-field">
+        <legend class="visually-hidden">Name field</legend>
+        <div data-related="name" class="form-item">
+          <div class="details-box">
+            <label for="name">First Name</label>
+            <span class="star" aria-hidden="true">*</span>
+          </div>
+          <input name="name" id="name" type="text" class="text-input" autocomplete="given-name" aria-describedby="error-msg-name">
+          <span id="error-msg-name" class="error-msg">This field is required</span>
+        </div>
+        <div data-related="surname" class="form-item">
+          <div class="details-box">
+            <label for="surname">Last Name</label>
+            <span class="star" aria-hidden="true">*</span>
+          </div>
+          <input id="surname" name="surname" type="text" class="text-input" autocomplete="family-name" aria-describedby="error-msg-surname">
+          <span id="error-msg-surname" class="error-msg">This field is required</span>
+        </div>
+      </fieldset>
+      <fieldset class="form-group email-field">
+        <legend class="visually-hidden">Name Info</legend>
+        <div data-related="email" class="form-item">
+          <div class="details-box">
+            <label for="email">Email Address</label>
+            <span class="star" aria-hidden="true">*</span>
+          </div>
+          <input name="email" id="email" type="email" class="text-input" autocomplete="email" aria-describedby="error-msg-email">
+          <span id="error-msg-email" class="error-msg">Please enter a valid email address</span>
+        </div>
+      </fieldset>
+      <fieldset data-related="radio-option" class="form-group query-type">
+        <legend class="visually-hidden">Query Type Field</legend>
+        <p class="custom-label">Query Type <span class="star" aria-hidden="true">*</span></p>
+        <div class="radio-group">
+          <div class="form-item form-item-bordered">
+            <label for="label-enquiry">General Enquiry</label>
+            <input name="radio-option" id="label-enquiry" value="General Enquiry" type="radio" class="radio-item">
+          </div>
+          <div class="form-item form-item-bordered">
+            <label for="support-request">Support Request</label>
+            <input name="radio-option" id="support-request" value="Support Request" type="radio" class="radio-item">
+          </div>
+        </div>
+        <span id="error-msg-query" class="error-msg">Please select a query type</span>
+      </fieldset>
+      <fieldset class="form-group message-field">
+        <legend class="visually-hidden">Custom Message</legend>
+        <div data-related="custom-message" class="form-item">
+          <div class="details-box">
+            <label for="custom-message">Message</label>
+            <span class="star" aria-hidden="true">*</span>
+          </div>
+          <textarea name="custom-message"  id="message" type="text" class="text-input text-input-msg" autocomplete="email" aria-describedby="error-msg-message"></textarea>
+          <span id="error-msg-message" class="error-msg">This field is required</span>
+        </div>
+      </fieldset>
+      <fieldset data-related="checkbox" class="form-group checkbox-field">
+        <legend class="visually-hidden">checkbox-field</legend>
+        <div class="form-item-flex">
+          <input name="checkbox" type="checkbox" id="checkbox" class="checkbox">
+          <div class="details-box">
+            <label for="checkbox">I consent to being contacted by the team</label>
+            <span class="star" aria-hidden="true">*</span>
+          </div>
+        </div>
+        <span id="error-msg-message" class="error-msg">To submit this form, please consent to beeing contacted</span>
+      </fieldset>
+      <input type="submit" class="submit-btn" value="Submit">
+    </form>
+    <aside class="alert-msg hidden-msg" aria-hidden="true">
+      <h2 class="success-title">Message Sent!</h2>
+      <p class="success-par">Thanks for completing the form. We'll be in touch soon!</p>
+    </aside>
+  </main>
+
+  
+  <footer class="footer">
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+      Coded by <a href="#">Dimitris Dristellas</a>.
+    </div>
+  </footer>
+
+</body>
+</html>
