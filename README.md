@@ -35,7 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Add solution URL here](https://github.com/dimitrisdr/contact-form-main.git)
+- LiveSite URL: [Add solution URL here](https://dimitrisdr.github.io/contact-form-main/)
 
 ## My process
 
