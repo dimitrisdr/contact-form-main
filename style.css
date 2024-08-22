@@ -91,6 +91,14 @@ body {
     border-radius: var(--custom-border-radius);
 } 
 
+.form-item-bordered{
+    transition: background-color 0.2s ease-in;
+}
+
+.form-item-bordered:has(.radio-item:checked){
+    background-color: var(--Green-200-lighter);
+}
+
 .text-input:focus, .text-input-msg:focus,  .text-input:hover, .text-input-msg:hover {
     border: 1px solid var(--Green-600-medium);
     outline: 1px solid var(--Green-600-medium);
